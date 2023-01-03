@@ -195,54 +195,66 @@ function runner(a) {
 
         if (a.__EMPTY != null) {
 
-
+            var arrForamounts=[];
+            var imagesToAdd = ["keyEnterNormalUPC.jpg"];
             //Add the ALL value
             addSquaresForDepartments("Total", a.__EMPTY)
 
             //Add the GROCERY value
-            if (a.__EMPTY_3 > 0)
-                addSquaresForDepartments("Grocery", a.__EMPTY_3)
-
+            if (a.__EMPTY_3 > 0){
+                addSquaresForDepartments("Grocery", a.__EMPTY_3);
+                arrForamounts.push([a.__EMPTY_3,"grocery"]);
+            }
             //Add the GM value
-            if (a.__EMPTY_4 > 0)
-                addSquaresForDepartments("GM", a.__EMPTY_4)
-
+            if (a.__EMPTY_4 > 0){
+                addSquaresForDepartments("GM", a.__EMPTY_4);
+                arrForamounts.push([a.__EMPTY_4,"GM"]);
+            }
             // Add the HBC value
-            if (a.__EMPTY_5 > 0)
-                addSquaresForDepartments("HBC", a.__EMPTY_5)
-
+            if (a.__EMPTY_5 > 0){
+                addSquaresForDepartments("HBC", a.__EMPTY_5);
+                arrForamounts.push([a.__EMPTY_5,"HBC"]);
+            }
             // Add the Meat Value
-            if (a.__EMPTY_6 > 0)
-                addSquaresForDepartments("Meat", a.__EMPTY_6)
-
-            // Add the Seafood Service Value
-            if (a.__EMPTY_7 > 0)
-                addSquaresForDepartments("Seafood", a.__EMPTY_7)
-
+            if (a.__EMPTY_6 > 0){
+                addSquaresForDepartments("Meat", a.__EMPTY_6);
+                arrForamounts.push([a.__EMPTY_6,"meat"]);
+            }
+            // Add the Seafood Value
+            if (a.__EMPTY_7 > 0){
+                addSquaresForDepartments("Seafood", a.__EMPTY_7);
+                arrForamounts.push([a.__EMPTY_7,"seafood"]);
+            }
             // Add the Deli/Food service Value
-            if (a.__EMPTY_8 > 0)
-                addSquaresForDepartments("Deli/FS", a.__EMPTY_8)
-
+            if (a.__EMPTY_8 > 0){
+                addSquaresForDepartments("Deli/FS", a.__EMPTY_8);
+                arrForamounts.push([a.__EMPTY_8,"deli"]);
+            }
             // Add the Produce Value
-            if (a.__EMPTY_9 > 0)
-                addSquaresForDepartments("Produce", a.__EMPTY_9)
-
+            if (a.__EMPTY_9 > 0){
+                addSquaresForDepartments("Produce", a.__EMPTY_9);
+                arrForamounts.push([a.__EMPTY_9,"produce"]);
+            }
             // Add the Bakery Value
-            if (a.__EMPTY_10 > 0)
-                addSquaresForDepartments("Bakery", a.__EMPTY_10)
-
+            if (a.__EMPTY_10 > 0){
+                addSquaresForDepartments("Bakery", a.__EMPTY_10);
+                arrForamounts.push([a.__EMPTY_10,"bakery"]);
+            }
             // Add the Kosher Value
-            if (a.__EMPTY_11 > 0)
-                addSquaresForDepartments("Kosher", a.__EMPTY_11)
-
+            if (a.__EMPTY_11 > 0){
+                addSquaresForDepartments("Kosher", a.__EMPTY_11);
+                arrForamounts.push([a.__EMPTY_11,"kosher"]);
+            }
             // Add the Floral Value
-            if (a.__EMPTY_12 > 0)
-                addSquaresForDepartments("Floral", a.__EMPTY_12)
-
+            if (a.__EMPTY_12 > 0){
+                addSquaresForDepartments("Floral", a.__EMPTY_12);
+                arrForamounts.push([a.__EMPTY_12,"floral"]);
+            }
             // Add the Beer/Wine Value
-            if (a.__EMPTY_13 > 0)
-                addSquaresForDepartments("Beer/Wine", a.__EMPTY_13)
-
+            if (a.__EMPTY_13 > 0){
+                addSquaresForDepartments("Beer/Wine", a.__EMPTY_13);
+                arrForamounts.push([a.__EMPTY_13,"beer"]);
+            }
             //create useful information
 
            // var hh = document.createElement("h1");
@@ -302,20 +314,123 @@ function runner(a) {
                 }
 
             } else {
+                
+                function addImage(imageLink){
+
+                    var kk = document.createElement("a");
+                    kk.setAttribute("id", "aImage");
+                    kk.innerHTML += imageLink;
+                    add.appendChild(kk);
+                }
 
                 var hh = document.createElement("h1");
                 hh.classList.add("headerinfo");
                 hh.textContent = "Useful Information"
                 add.appendChild(hh);
-    
 
-                // insert useful information
-                var kk = document.createElement("a");
-                kk.setAttribute("id", "aImage");
-                kk.innerHTML += '<img src="images/KeyInHelper.jpg">';
-                add.appendChild(kk);
-               
+
+                if(document.querySelector("#default").checked){
+                    addImage('<img class="defaultImage" src="images/KeyInHelper.jpg">',true);
+                }
+                else
+                {
+                    var keyEnterScaleLabel = false;
+
+                    // Sort the array
+                    arrForamounts.sort((a,b) => b[0] - a[0]);
+
+                    // Add the correct images
+                    arrForamounts.forEach((item) =>{ 
+                        switch (item[1]) {
+                            case "grocery":
+
+                                imagesToAdd.push("GroceryMarkdowns.jpg");
+                                break;
+                            case "GM":
+                            case "HBC":
+                            case "kosher":
+                            case "beer":                      
+                                break;
+                            case "deli":
+                            case "seafood":
+                            case "bakery":
+                                if(!keyEnterScaleLabel){
+                                    imagesToAdd.push("keyInScaleLabel.jpg");
+                                    keyEnterScaleLabel = true;    
+                                }
+
+                                break;
+                            case "produce":
+                                imagesToAdd.push("ProduceBerryPLUs.jpg");
+                                break;
+                            case "meat":
+                                if(a.__EMPTY_6 >= 100){
+                                    imagesToAdd.push("keyInMeatOver100.jpg");
+                                    imagesToAdd.push("MeatPLUsForOver100.jpg");
+                                }
+                                if(!keyEnterScaleLabel){
+                                    imagesToAdd.push("keyInScaleLabel.jpg");
+                                    keyEnterScaleLabel = true;    
+                                }
+
+                                break;
+                            case "floral":
+                                imagesToAdd.push("keyEnterFloralUpgrades.jpg");
+                                imagesToAdd.push("PLUsForDeptFloral.jpg");
+                                imagesToAdd.push("FloralUpgradeCodes.jpg");
+                                break;
+                            default:
+                                break;
+                        }
+                    });
+
+                    var counter = 0;
+                    imagesToAdd.forEach((item)=>{
+                        if(counter < 6){
+                            addImage(`<img class="multiImage" src="images/${item}">`);
+                            counter++;
+                        }
+                    });
+
+                    if(imagesToAdd.length < 6){
+                        addImage(`<img class="multiImage" src="images/priceChange.jpg">`);
+                    }
+                    /*
+                    if(imagesToAdd.length < 6){
+                        imagesToAdd.push("keyInScaleLabel.jpg");
+                        imagesToAdd.push("keyInScaleLabel.jpg");
+                        imagesToAdd.push("keyInScaleLabel.jpg");
+                        imagesToAdd.push("keyInScaleLabel.jpg");
+                        imagesToAdd.push("keyInScaleLabel.jpg");
+                        imagesToAdd.push("keyInScaleLabel.jpg");
+                    }
+
+                    var counter = 0;
+                    while(counter < 6){
+                        addImage(`<img class="multiImage" src="images/${imagesToAdd[counter]}">`)
+                        counter++;
+                    }
+                    */
+
+
+
+
+
+
+                    // insert useful information
+                   // addImage('<img class="multiImage" src="images/ProduceBerryPLUs.jpg">');
+                    //addImage('<img class="multiImage" src="images/keyInMeatOver100.jpg">');
+                   // addImage('<img class="multiImage" src="images/FloralUpgradeCodes.jpg">');
+                   // addImage('<img class="multiImage" src="images/GroceryMarkdowns.jpg">');
+                   // addImage('<img class="multiImage" src="images/PLUsForDeptFloral.jpg">');
+                    //addImage('<img class="multiImage" src="images/keyEnterFloralUpgrades.jpg">');
+                }
+
+
+        
             }
+
+
 
             //yy.setAttribute("id", "nothing");
             add.setAttribute("id", "nothing");
@@ -324,6 +439,9 @@ function runner(a) {
 
     }
 }
+
+
+
 function listOfName(a) {
     let topTen = a;
     topTen.sort((a, b) => parseFloat(b.value) - parseFloat(a.value));

@@ -4,7 +4,7 @@
 
 
     <!-- Google tag (gtag.js) 
--->
+
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJVBK29H2Y"></script>
@@ -15,13 +15,13 @@
 
   gtag('config', 'G-WJVBK29H2Y');
 </script>
-
+-->
 
 
 <title>Keyed In Report</title>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/xlsx.full.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/jszip.js"></script>
-<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
 <script src="scripts/index.js" defer></script>
 <link rel="stylesheet" href="styles/index.css">
 </head>
@@ -35,15 +35,30 @@
         <input type="file" id="fileUpload" onchange="kjvkh();" />
 
         <label for="upload" id="conBob">Keyed By Department (x)</label>
+
+
+        
     </div>
     <hr />
     <div id="dvExcel">Please upload Keyed By Department Excel file.</div>
 
 
 
-    <input type="button" id="upload1" value="Start" onclick="runAll()" />
-
-
+ 
+    <div>
+        <input type="button" id="upload1" value="Start" onclick="runAll()" />
+        <div> 
+            <h2>Useful Information type</h2>
+            <div>
+                <input type="radio" id="default" name="usefulInformation"/>
+                <label for="default" id="defaultRadioButton">Default</label>
+            </div>
+            <div>
+                <input type="radio" id="Auto" name="usefulInformation" checked="checked"/>
+                <label for="Auto" id="dautoRadioButton">Automate selection based on departments keyed</label>
+            </div> 
+        </div>
+    </div>
 
 
     <div id="dvExcel1"></div>

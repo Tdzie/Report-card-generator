@@ -1,8 +1,11 @@
 # Report-card-generator
 Designed to read and extract information from an Excel file to generate report cards for each person on the list. This can be used by managers to coach and counsel teammates with individualized information. 
 
+*Update* 1/2/2023
 
-*Update*
+The program will now select the useful information based upon the departments that were keyed for each user.
+
+*Update* 12/28/2022
 
 Our company keeps changing the report. This is now updated to work with the current version.
 

@@ -34,6 +34,7 @@ html {
 
 body {
     margin-bottom: 60px;
+    max-width: 1000px;
 }
 
 #fileUploadDiv1,
@@ -113,10 +114,11 @@ div#dvExcel1 {
     height: 100px;
     border: 1px solid black;
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1.7em;
     box-shadow: black 5px 5px 5px;
     border-radius: 10px;
     margin: 15px;
+    font-weight: bold;
 }
 
 .inboxhead {
@@ -129,8 +131,12 @@ div#dvExcel1 {
 }
 
 .inbox {
-    text-align: left;
+    text-align: center;
+    justify-content: center;
     padding-left: 4px;
+    font-weight: bold;
+    font-size: 1.3em;
+    padding-top: 10px;
 }
 
 ol {

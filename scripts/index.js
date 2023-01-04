@@ -146,7 +146,7 @@ function addSquaresForDepartments(departmentName, value) {
 
     // Add Value
     di = document.createElement("div");
-    di.innerHTML = "Value: $" + value;
+    di.innerHTML =  `$${value}`;
     di.classList.add("inbox");
     nn.appendChild(di);
 
@@ -330,7 +330,7 @@ function runner(a) {
 
 
                 if(document.querySelector("#default").checked){
-                    addImage('<img class="defaultImage" src="images/KeyInHelper.jpg">',true);
+                    addImage('<img class="defaultImage" src="images/KeyInHelper.jpg">');
                 }
                 else
                 {

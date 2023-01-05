@@ -21,6 +21,291 @@ var kosherV = 0;
 //make a array for top 10
 var topTen = [];
 
+// for custom selection
+var customImages = [];
+var numberOfImagesSelected = 6;
+var image0 = false;
+var image1 = false;
+var image2 = false;
+var image3 = false;
+var image4 = false;
+var image5 = false;
+var image6 = false;
+var image7 = false;
+var image8 = false;
+var image9 = false;
+
+const startingDiv = document.getElementById("test");
+
+document.querySelector("#custom").addEventListener("click", addCustom);
+
+const generic = document.querySelector("#default");
+generic.addEventListener("click", ()=>{startingDiv.innerHTML = "";});
+const auto = document.querySelector("#Auto");
+auto.addEventListener("click", ()=>{startingDiv.innerHTML = "";});
+
+function addCustom(){
+
+    startingDiv.innerHTML = "";
+    counter = 0;
+    counterforimage = 0;
+
+    var h1forcounter = document.createElement("h1");
+    h1forcounter.innerHTML = `Select ${numberOfImagesSelected} job aides.`;
+    startingDiv.appendChild(h1forcounter);
+
+
+    function addCustomButton(filename){
+        var button = document.createElement("img");
+        button.src = `${filename}`;
+        button.setAttribute("id", `image${counterforimage}`)
+        button.classList.add("buttonImage");
+        startingDiv.appendChild(button);
+        counterforimage++;
+    }
+
+    function addDivs(counter){
+    fetch("json/images.json")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => addCustomButton(data.images[counter].name));
+    }
+
+    while (counter < 10){
+        addDivs(counter);
+        counter++;
+    }
+
+    setTimeout(function () {
+
+     // ---------------------- Image 0 --------------------------------
+            document.getElementById("image0").addEventListener("click", function(){
+                if(!image0){
+                    if(numberOfImagesSelected == 0){
+                        window.alert("Maximum Number of job aides are selected");
+                    }else{
+                        customImages.push("images/FloralUpgradeCodes.jpg");
+                        numberOfImagesSelected--;
+                        h1forcounter.innerHTML = `Select ${numberOfImagesSelected} job aides.`;
+                        document.getElementById("image0").style.backgroundColor = "black";
+                        image0 = true;    
+                    }
+       
+                }else{
+                    var index = customImages.indexOf("images/FloralUpgradeCodes.jpg");
+                    customImages.splice(index,1);
+                    document.getElementById("image0").style.backgroundColor = "white";
+                    numberOfImagesSelected++;
+                    h1forcounter.innerHTML = `Select ${numberOfImagesSelected} job aides.`;
+                    image0 = false;
+                }
+                            console.log(customImages);
+                 }); 
+// ---------------------- Image 1 --------------------------------
+            document.getElementById("image1").addEventListener("click", function(){
+                if(!image1){
+                    if(numberOfImagesSelected == 0){
+                        window.alert("Maximum Number of job aides are selected");
+                    }else{
+                    customImages.push("images/GroceryMarkdowns.jpg");
+                    numberOfImagesSelected--;
+                    h1forcounter.innerHTML = `Select ${numberOfImagesSelected} job aides.`;
+                    document.getElementById("image1").style.backgroundColor = "black";
+                    image1 = true;
+                    }
+                }else{
+                    var index = customImages.indexOf("images/GroceryMarkdowns.jpg");
+                    customImages.splice(index,1);
+                    document.getElementById("image1").style.backgroundColor = "white";
+                    numberOfImagesSelected++;
+                    h1forcounter.innerHTML = `Select ${numberOfImagesSelected} job aides.`;
+                    image1 = false;
+                }
+                            console.log(customImages);
+                 }); 
+    // ---------------------- Image 2 --------------------------------
+            document.getElementById("image2").addEventListener("click", function(){
+                if(!image2){
+                    if(numberOfImagesSelected == 0){
+                        window.alert("Maximum Number of job aides are selected");
+                    }else{
+                    customImages.push("images/keyEnterFloralUpgrades.jpg");
+                    numberOfImagesSelected--;
+                    h1forcounter.innerHTML = `Select ${numberOfImagesSelected} job aides.`;
+                    document.getElementById("image2").style.backgroundColor = "black";
+                    image2 = true;
+                    }
+                }else{
+                    var index = customImages.indexOf("images/keyEnterFloralUpgrades.jpg");
+                    customImages.splice(index,1);
+                    document.getElementById("image2").style.backgroundColor = "white";
+                    numberOfImagesSelected++;
+                    h1forcounter.innerHTML = `Select ${numberOfImagesSelected} job aides.`;
+                    image2 = false;
+                }
+                            console.log(customImages);
+                 }); 
+    // ---------------------- Image 3 --------------------------------
+            document.getElementById("image3").addEventListener("click", function(){
+                if(!image3){
+                    if(numberOfImagesSelected == 0){
+                        window.alert("Maximum Number of job aides are selected");
+                    }else{
+                    customImages.push("images/keyEnterNormalUPC.jpg");
+                    numberOfImagesSelected--;
+                    h1forcounter.innerHTML = `Select ${numberOfImagesSelected} job aides.`;
+                    document.getElementById("image3").style.backgroundColor = "black";
+                    image3 = true;
+                    }
+                }else{
+                    var index = customImages.indexOf("images/keyEnterNormalUPC.jpg");
+                    customImages.splice(index,1);
+                    document.getElementById("image3").style.backgroundColor = "white";
+                    numberOfImagesSelected++;
+                    h1forcounter.innerHTML = `Select ${numberOfImagesSelected} job aides.`;
+                    image3 = false;
+                }
+                            console.log(customImages);
+                 }); 
+    // ---------------------- Image 4 --------------------------------
+            document.getElementById("image4").addEventListener("click", function(){
+                if(!image4){
+                    if(numberOfImagesSelected == 0){
+                        window.alert("Maximum Number of job aides are selected");
+                    }else{
+                    customImages.push("images/keyInMeatOver100.jpg");
+                    numberOfImagesSelected--;
+                    h1forcounter.innerHTML = `Select ${numberOfImagesSelected} job aides.`;
+                    document.getElementById("image4").style.backgroundColor = "black";
+                    image4 = true;
+                    }
+                }else{
+                    var index = customImages.indexOf("images/keyInMeatOver100.jpg");
+                    customImages.splice(index,1);
+                    document.getElementById("image4").style.backgroundColor = "white";
+                    numberOfImagesSelected++;
+                    h1forcounter.innerHTML = `Select ${numberOfImagesSelected} job aides.`;
+                    image4 = false;
+                }
+                            console.log(customImages);
+                 }); 
+    // ---------------------- Image 5 --------------------------------
+            document.getElementById("image5").addEventListener("click", function(){
+                if(!image5){
+                    if(numberOfImagesSelected == 0){
+                        window.alert("Maximum Number of job aides are selected");
+                    }else{
+                    customImages.push("images/keyInScaleLabel.jpg");
+                    numberOfImagesSelected--;
+                    h1forcounter.innerHTML = `Select ${numberOfImagesSelected} job aides.`;
+                    document.getElementById("image5").style.backgroundColor = "black";
+                    image5 = true;
+                    }
+                }else{
+                    var index = customImages.indexOf("images/keyInScaleLabel.jpg");
+                    customImages.splice(index,1);
+                    document.getElementById("image5").style.backgroundColor = "white";
+                    numberOfImagesSelected++;
+                    h1forcounter.innerHTML = `Select ${numberOfImagesSelected} job aides.`;
+                    image5 = false;
+                }
+                            console.log(customImages);
+                 }); 
+    // ---------------------- Image 6 --------------------------------
+            document.getElementById("image6").addEventListener("click", function(){
+                if(!image6){
+                    if(numberOfImagesSelected == 0){
+                        window.alert("Maximum Number of job aides are selected");
+                    }else{
+                    customImages.push("images/MeatPLUsForOver100.jpg");
+                    numberOfImagesSelected--;
+                    h1forcounter.innerHTML = `Select ${numberOfImagesSelected} job aides.`;
+                    document.getElementById("image6").style.backgroundColor = "black";
+                    image6 = true;
+                    }
+                }else{
+                    var index = customImages.indexOf("images/MeatPLUsForOver100.jpg");
+                    customImages.splice(index,1);
+                    document.getElementById("image6").style.backgroundColor = "white";
+                    numberOfImagesSelected++;
+                    h1forcounter.innerHTML = `Select ${numberOfImagesSelected} job aides.`;
+                    image6 = false;
+                }
+                            console.log(customImages);
+                 }); 
+    // ---------------------- Image 7 --------------------------------
+            document.getElementById("image7").addEventListener("click", function(){
+                if(!image7){
+                    if(numberOfImagesSelected == 0){
+                        window.alert("Maximum Number of job aides are selected");
+                    }else{
+                    customImages.push("images/PLUsForDeptFloral.jpg");
+                    numberOfImagesSelected--;
+                    h1forcounter.innerHTML = `Select ${numberOfImagesSelected} job aides.`;
+                    document.getElementById("image7").style.backgroundColor = "black";
+                    image7 = true;
+                    }
+                }else{
+                    var index = customImages.indexOf("images/PLUsForDeptFloral.jpg");
+                    customImages.splice(index,1);
+                    document.getElementById("image7").style.backgroundColor = "white";
+                    numberOfImagesSelected++;
+                    h1forcounter.innerHTML = `Select ${numberOfImagesSelected} job aides.`;
+                    image7 = false;
+                }
+                            console.log(customImages);
+                 }); 
+    // ---------------------- Image 8 --------------------------------
+            document.getElementById("image8").addEventListener("click", function(){
+                if(!image8){
+                    if(numberOfImagesSelected == 0){
+                        window.alert("Maximum Number of job aides are selected");
+                    }else{
+                    customImages.push("images/priceChange.jpg");
+                    numberOfImagesSelected--;
+                    h1forcounter.innerHTML = `Select ${numberOfImagesSelected} job aides.`;
+                    document.getElementById("image8").style.backgroundColor = "black";
+                    image8 = true;
+                    }
+                }else{
+                    var index = customImages.indexOf("images/priceChange.jpg");
+                    customImages.splice(index,1);
+                    document.getElementById("image8").style.backgroundColor = "white";
+                    numberOfImagesSelected++;
+                    h1forcounter.innerHTML = `Select ${numberOfImagesSelected} job aides.`;
+                    image8 = false;
+                }
+                            console.log(customImages);
+                 }); 
+    // ---------------------- Image 9 --------------------------------
+            document.getElementById("image9").addEventListener("click", function(){
+                if(!image9){
+                    if(numberOfImagesSelected == 0){
+                        window.alert("Maximum Number of job aides are selected");
+                    }else{
+                    customImages.push("images/ProduceBerryPLUs.jpg");
+                    numberOfImagesSelected--;
+                    h1forcounter.innerHTML = `Select ${numberOfImagesSelected} job aides.`;
+                    document.getElementById("image9").style.backgroundColor = "black";
+                    image9 = true;
+                    }
+                }else{
+                    var index = customImages.indexOf("images/ProduceBerryPLUs.jpg");
+                    customImages.splice(index,1);
+                    document.getElementById("image9").style.backgroundColor = "white";
+                    numberOfImagesSelected++;
+                    h1forcounter.innerHTML = `Select ${numberOfImagesSelected} job aides.`;
+                    image9 = false;
+                }
+                            console.log(customImages);
+                 }); 
+  
+
+    }, 100);
+ 
+
+};
 // ------------------------------ Start the upload to convert the excel file to a JSON--------------------------
 function Upload() {
 
@@ -257,14 +542,6 @@ function runner(a) {
             }
             //create useful information
 
-           // var hh = document.createElement("h1");
-           // hh.classList.add("headerinfo");
-           // hh.textContent = "Useful Information"
-           // add.appendChild(hh);
-
-
-
-
             // store total and top ten based on count
 
             if (a["Report Name:"] == "Sum") {
@@ -329,10 +606,10 @@ function runner(a) {
                 add.appendChild(hh);
 
 
-                if(document.querySelector("#default").checked){
+                if(generic.checked){
                     addImage('<img class="defaultImage" src="images/KeyInHelper.jpg">');
                 }
-                else
+                else if(auto.checked)
                 {
                     var keyEnterScaleLabel = false;
 
@@ -395,46 +672,16 @@ function runner(a) {
                     if(imagesToAdd.length < 6){
                         addImage(`<img class="multiImage" src="images/priceChange.jpg">`);
                     }
-                    /*
-                    if(imagesToAdd.length < 6){
-                        imagesToAdd.push("keyInScaleLabel.jpg");
-                        imagesToAdd.push("keyInScaleLabel.jpg");
-                        imagesToAdd.push("keyInScaleLabel.jpg");
-                        imagesToAdd.push("keyInScaleLabel.jpg");
-                        imagesToAdd.push("keyInScaleLabel.jpg");
-                        imagesToAdd.push("keyInScaleLabel.jpg");
-                    }
 
-                    var counter = 0;
-                    while(counter < 6){
-                        addImage(`<img class="multiImage" src="images/${imagesToAdd[counter]}">`)
-                        counter++;
-                    }
-                    */
-
-
-
-
-
-
-                    // insert useful information
-                   // addImage('<img class="multiImage" src="images/ProduceBerryPLUs.jpg">');
-                    //addImage('<img class="multiImage" src="images/keyInMeatOver100.jpg">');
-                   // addImage('<img class="multiImage" src="images/FloralUpgradeCodes.jpg">');
-                   // addImage('<img class="multiImage" src="images/GroceryMarkdowns.jpg">');
-                   // addImage('<img class="multiImage" src="images/PLUsForDeptFloral.jpg">');
-                    //addImage('<img class="multiImage" src="images/keyEnterFloralUpgrades.jpg">');
                 }
+                else
+                {
+                customImages.forEach((item) => {addImage(`<img class="multiImage" src="${item}">`)});
 
-
-        
+                };
             }
 
-
-
-            //yy.setAttribute("id", "nothing");
             add.setAttribute("id", "nothing");
-
         }
 
     }

@@ -441,7 +441,7 @@ function addSquaresForDepartments(departmentName, value) {
 
 // main function to create cards
 function runner(a) {
-    if(a.__EMPTY > 0){
+    if(a.__EMPTY == 0){
     var testd = document.getElementById("test");
 
     // check if the current row is a EZ scan by checking __EMPTY_3 and combine the numbers into a single file

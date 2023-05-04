@@ -379,17 +379,17 @@ function ezScanAdd() {
         __EMPTY_1: "EZ",
         __EMPTY_2: "SCAN",
         __EMPTY: allV.toFixed(2),
-        __EMPTY_3: groceryV.toFixed(2),
-        __EMPTY_4: gmV.toFixed(2),
-        __EMPTY_5: hbcV.toFixed(2),
-        __EMPTY_6: meatV.toFixed(2),
-        __EMPTY_7: seafoodV.toFixed(2),
-        __EMPTY_8: deliV.toFixed(2),
-        __EMPTY_9: produceV.toFixed(2),
-        __EMPTY_10: bakeryV.toFixed(2),
-        __EMPTY_11: kosherV.toFixed(2),
-        __EMPTY_12: floralV.toFixed(2),
-        __EMPTY_13: beerV.toFixed(2)
+        __EMPTY_4: groceryV.toFixed(2),
+        __EMPTY_5: gmV.toFixed(2),
+        __EMPTY_6: hbcV.toFixed(2),
+        __EMPTY_7: meatV.toFixed(2),
+        __EMPTY_8: seafoodV.toFixed(2),
+        __EMPTY_9: deliV.toFixed(2),
+        __EMPTY_10: produceV.toFixed(2),
+        __EMPTY_11: bakeryV.toFixed(2),
+        __EMPTY_12: kosherV.toFixed(2),
+        __EMPTY_13: floralV.toFixed(2),
+        __EMPTY_14: beerV.toFixed(2)
     }
 
     ];
@@ -400,17 +400,17 @@ function ezScanAdd() {
 
 function addEasyScanNumbers(cashierArr) {
     allV += parseFloat(cashierArr.__EMPTY);
-    groceryV += parseFloat(cashierArr.__EMPTY_3);
-    gmV += parseFloat(cashierArr.__EMPTY_4);
-    hbcV += parseFloat(cashierArr.__EMPTY_5)
-    meatV += parseFloat(cashierArr.__EMPTY_6);
-    seafoodV += parseFloat(cashierArr.__EMPTY_7);
-    deliV += parseFloat(cashierArr.__EMPTY_8);
-    produceV += parseFloat(cashierArr.__EMPTY_9);
-    bakeryV += parseFloat(cashierArr.__EMPTY_10);
-    kosherV += parseFloat(cashierArr.__EMPTY_11);
-    floralV += parseFloat(cashierArr.__EMPTY_12);
-    beerV += parseFloat(cashierArr.__EMPTY_13);
+    groceryV += parseFloat(cashierArr.__EMPTY_4);
+    gmV += parseFloat(cashierArr.__EMPTY_5);
+    hbcV += parseFloat(cashierArr.__EMPTY_6)
+    meatV += parseFloat(cashierArr.__EMPTY_7);
+    seafoodV += parseFloat(cashierArr.__EMPTY_8);
+    deliV += parseFloat(cashierArr.__EMPTY_9);
+    produceV += parseFloat(cashierArr.__EMPTY_10);
+    bakeryV += parseFloat(cashierArr.__EMPTY_11);
+    kosherV += parseFloat(cashierArr.__EMPTY_12);
+    floralV += parseFloat(cashierArr.__EMPTY_13);
+    beerV += parseFloat(cashierArr.__EMPTY_14);
 };
 
 function addCasherToTopTen(cashierArr) {
@@ -486,59 +486,59 @@ function runner(a) {
             addSquaresForDepartments("Total", a.__EMPTY)
 
             //Add the GROCERY value
-            if (a.__EMPTY_3 > 0){
-                addSquaresForDepartments("Grocery", a.__EMPTY_3);
-                arrForamounts.push([a.__EMPTY_3,"grocery"]);
+            if (a.__EMPTY_4 > 0){
+                addSquaresForDepartments("Grocery", a.__EMPTY_4);
+                arrForamounts.push([a.__EMPTY_4,"grocery"]);
             }
             //Add the GM value
-            if (a.__EMPTY_4 > 0){
-                addSquaresForDepartments("GM", a.__EMPTY_4);
-                arrForamounts.push([a.__EMPTY_4,"GM"]);
+            if (a.__EMPTY_5 > 0){
+                addSquaresForDepartments("GM", a.__EMPTY_5);
+                arrForamounts.push([a.__EMPTY_5,"GM"]);
             }
             // Add the HBC value
-            if (a.__EMPTY_5 > 0){
-                addSquaresForDepartments("HBC", a.__EMPTY_5);
-                arrForamounts.push([a.__EMPTY_5,"HBC"]);
+            if (a.__EMPTY_6 > 0){
+                addSquaresForDepartments("HBC", a.__EMPTY_6);
+                arrForamounts.push([a.__EMPTY_6,"HBC"]);
             }
             // Add the Meat Value
-            if (a.__EMPTY_6 > 0){
-                addSquaresForDepartments("Meat", a.__EMPTY_6);
-                arrForamounts.push([a.__EMPTY_6,"meat"]);
+            if (a.__EMPTY_7 > 0){
+                addSquaresForDepartments("Meat", a.__EMPTY_7);
+                arrForamounts.push([a.__EMPTY_7,"meat"]);
             }
             // Add the Seafood Value
-            if (a.__EMPTY_7 > 0){
-                addSquaresForDepartments("Seafood", a.__EMPTY_7);
-                arrForamounts.push([a.__EMPTY_7,"seafood"]);
+            if (a.__EMPTY_8 > 0){
+                addSquaresForDepartments("Seafood", a.__EMPTY_8);
+                arrForamounts.push([a.__EMPTY_8,"seafood"]);
             }
             // Add the Deli/Food service Value
-            if (a.__EMPTY_8 > 0){
-                addSquaresForDepartments("Deli/FS", a.__EMPTY_8);
-                arrForamounts.push([a.__EMPTY_8,"deli"]);
+            if (a.__EMPTY_9 > 0){
+                addSquaresForDepartments("Deli/FS", a.__EMPTY_9);
+                arrForamounts.push([a.__EMPTY_9,"deli"]);
             }
             // Add the Produce Value
-            if (a.__EMPTY_9 > 0){
-                addSquaresForDepartments("Produce", a.__EMPTY_9);
-                arrForamounts.push([a.__EMPTY_9,"produce"]);
+            if (a.__EMPTY_10 > 0){
+                addSquaresForDepartments("Produce", a.__EMPTY_10);
+                arrForamounts.push([a.__EMPTY_10,"produce"]);
             }
             // Add the Bakery Value
-            if (a.__EMPTY_10 > 0){
-                addSquaresForDepartments("Bakery", a.__EMPTY_10);
-                arrForamounts.push([a.__EMPTY_10,"bakery"]);
+            if (a.__EMPTY_11 > 0){
+                addSquaresForDepartments("Bakery", a.__EMPTY_11);
+                arrForamounts.push([a.__EMPTY_11,"bakery"]);
             }
             // Add the Kosher Value
-            if (a.__EMPTY_11 > 0){
-                addSquaresForDepartments("Kosher", a.__EMPTY_11);
-                arrForamounts.push([a.__EMPTY_11,"kosher"]);
+            if (a.__EMPTY_12 > 0){
+                addSquaresForDepartments("Kosher", a.__EMPTY_12);
+                arrForamounts.push([a.__EMPTY_12,"kosher"]);
             }
             // Add the Floral Value
-            if (a.__EMPTY_12 > 0){
-                addSquaresForDepartments("Floral", a.__EMPTY_12);
-                arrForamounts.push([a.__EMPTY_12,"floral"]);
+            if (a.__EMPTY_13 > 0){
+                addSquaresForDepartments("Floral", a.__EMPTY_13);
+                arrForamounts.push([a.__EMPTY_13,"floral"]);
             }
             // Add the Beer/Wine Value
-            if (a.__EMPTY_13 > 0){
-                addSquaresForDepartments("Beer/Wine", a.__EMPTY_13);
-                arrForamounts.push([a.__EMPTY_13,"beer"]);
+            if (a.__EMPTY_14 > 0){
+                addSquaresForDepartments("Beer/Wine", a.__EMPTY_14);
+                arrForamounts.push([a.__EMPTY_14,"beer"]);
             }
             //create useful information
 
@@ -641,7 +641,7 @@ function runner(a) {
                                 imagesToAdd.push("ProduceBerryPLUs.jpg");
                                 break;
                             case "meat":
-                                if(a.__EMPTY_6 >= 100){
+                                if(a.__EMPTY_7 >= 100){
                                     imagesToAdd.push("keyInMeatOver100.jpg");
                                     imagesToAdd.push("MeatPLUsForOver100.jpg");
                                 }

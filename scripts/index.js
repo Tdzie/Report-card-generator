@@ -441,9 +441,9 @@ function addSquaresForDepartments(departmentName, value) {
 
 // main function to create cards
 function runner(a) {
-    if(a.__EMPTY == 0){
+    if(a.__EMPTY != 0){
     var testd = document.getElementById("test");
-
+        
     // check if the current row is a EZ scan by checking __EMPTY_3 and combine the numbers into a single file
     if (a.__EMPTY_1 == "--") {
 
@@ -621,12 +621,11 @@ function runner(a) {
                     arrForamounts.forEach((item) =>{ 
                         switch (item[1]) {
                             case "grocery":
-
-                                imagesToAdd.push("GroceryMarkdowns.jpg");
-                                break;
                             case "GM":
                             case "HBC":
                             case "kosher":
+                                imagesToAdd.push("GroceryMarkdowns.jpg");
+                                break;                                
                             case "beer":                      
                                 break;
                             case "deli":

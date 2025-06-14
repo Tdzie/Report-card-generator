@@ -34,6 +34,7 @@ var image6 = false;
 var image7 = false;
 var image8 = false;
 var image9 = false;
+var image10 = false;
 
 const startingDiv = document.getElementById("test");
 
@@ -72,7 +73,7 @@ function addCustom(){
     .then((data) => addCustomButton(data.images[counter].name));
     }
 
-    while (counter < 10){
+    while (counter < 11){
         addDivs(counter);
         counter++;
     }
@@ -300,7 +301,28 @@ function addCustom(){
                 }
                             console.log(customImages);
                  }); 
-  
+     // ---------------------- Image 10 --------------------------------
+     document.getElementById("image10").addEventListener("click", function(){
+        if(!image10){
+            if(numberOfImagesSelected == 0){
+                window.alert("Maximum Number of job aides are selected");
+            }else{
+            customImages.push("images/markdowns.jpg");
+            numberOfImagesSelected--;
+            h1forcounter.innerHTML = `Select ${numberOfImagesSelected} job aides.`;
+            document.getElementById("image10").style.backgroundColor = "black";
+            image9 = true;
+            }
+        }else{
+            var index = customImages.indexOf("images/markdowns.jpg");
+            customImages.splice(index,1);
+            document.getElementById("image10").style.backgroundColor = "white";
+            numberOfImagesSelected++;
+            h1forcounter.innerHTML = `Select ${numberOfImagesSelected} job aides.`;
+            image10 = false;
+        }
+                    console.log(customImages);
+         }); 
 
     }, 100);
  
@@ -636,6 +658,7 @@ function runner(a) {
                             case "bakery":
                                 if(!keyEnterScaleLabel){
                                     imagesToAdd.push("keyInScaleLabel.jpg");
+                                    imagesToAdd.push("markdowns.jpg");
                                     keyEnterScaleLabel = true;    
                                 }
 
@@ -652,7 +675,7 @@ function runner(a) {
                                     imagesToAdd.push("keyInScaleLabel.jpg");
                                     keyEnterScaleLabel = true;    
                                 }
-
+                                imagesToAdd.push("markdowns.jpg");
                                 break;
                             case "floral":
                                 imagesToAdd.push("keyEnterFloralUpgrades.jpg");

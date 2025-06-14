@@ -2,7 +2,7 @@
 
 var _arrForCashiers;
 
-
+var dateOfRun;
 // variables fpr the array to count ez scan
 
 var allV = 0;
@@ -356,7 +356,8 @@ function ProcessExcel(data) {
     //Print the cashers to the console
     console.log(_arrForCashiers);
 
-
+    // set the date of run
+    dateOfRun = excelRows[0]["All Keyed Items Cashier Level"];
     // wait till all ezscans are counted and add then to the 2nd from last page
     for (var i = 8; i < excelRows.length; i++) {
         if (i == excelRows.length - 1) {
@@ -469,10 +470,12 @@ function runner(a) {
         // count
         di = document.createElement("div");
         if (a["Report Name:"] == "Sum") {
-            di.innerHTML = "STORE TOTAL";
+            di.innerHTML = "Total Store Manual Keyed Entries For: " + dateOfRun;
+            di.style.fontSize = "45px";
         }
         else {
             di.innerHTML = a.__EMPTY_1 + " " + a.__EMPTY_2;
+  
         }
 
         nn.appendChild(di);

@@ -379,7 +379,7 @@ function ProcessExcel(data) {
     console.log(_arrForCashiers);
 
     // set the date of run
-    dateOfRun = excelRows[0]["All Keyed Items Cashier Level"];
+    dateOfRun = excelRows[0]["PC/M32 Keyed Items Cashier Level"];
     // wait till all ezscans are counted and add then to the 2nd from last page
     for (var i = 8; i < excelRows.length; i++) {
         if (i == excelRows.length - 1) {
